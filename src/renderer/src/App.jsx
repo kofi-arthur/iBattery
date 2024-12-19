@@ -7,17 +7,20 @@ import { useEffect, useState } from 'react'
 import icon from './assets/icon.png'
 
 function App() {
+  const batteryAPI = navigator.getBattery()
+
   const [count, setCount] = useState(0)
   const [battery, setBattery] = useState({ level: 0, charging: false })
 
   useEffect(() => {
     const api = window.electronAPI
 
-    navigator.getBattery().then((battery) => {
+    batteryAPI.then((battery) => {
       setBattery({ level: Math.round(battery.level * 100), charging: battery.charging })
 
       battery.addEventListener('levelchange', () => {
         setBattery({ level: Math.round(battery.level * 100), charging: battery.charging })
+        setCount(Math.round(battery.level * 100))
         if (api) {
           battery.charging &&
             Math.round(battery.level * 100) === 100 &&
@@ -37,6 +40,7 @@ function App() {
 
       battery.addEventListener('chargingchange', () => {
         setBattery({ level: Math.round(battery.level * 100), charging: battery.charging })
+        setCount(Math.round(battery.level * 100))
         if (api) {
           battery.charging &&
             Math.round(battery.level * 100) === 100 &&
