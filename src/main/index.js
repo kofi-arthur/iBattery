@@ -44,13 +44,13 @@ function createWindow() {
       click: () => {
         mainWindow.show()
       }
-    },
-    {
-      label: 'Quit',
-      click: () => {
-        app.exit()
-      }
     }
+    // {
+    //   label: 'Quit',
+    //   click: () => {
+    //     app.exit()
+    //   }
+    // }
   ])
   tray.setToolTip('iBattery')
   tray.setContextMenu(trayMenu)
