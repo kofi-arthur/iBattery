@@ -44,6 +44,12 @@ function createWindow() {
       click: () => {
         mainWindow.show()
       }
+    },
+    {
+      label: 'Quit',
+      click: () => {
+        app.exit()
+      }
     }
   ])
   tray.setToolTip('iBattery')
@@ -76,14 +82,14 @@ function createWindow() {
 
   // Minimize to tray on minimize
   mainWindow.on('minimize', (event) => {
-    event.preventDefault() // Prevent the default minimize behavior
-    mainWindow.hide() // Hide the window
+    event.preventDefault()
+    mainWindow.hide()
   })
 
   // Minimize to tray on close
   mainWindow.on('close', (event) => {
-    event.preventDefault() // Prevent the default close behavior
-    mainWindow.hide() // Hide the window
+    event.preventDefault()
+    mainWindow.hide()
   })
 }
 
