@@ -1,6 +1,6 @@
-# package.json
+# iBattery
 
-An Electron application with React
+An Electron application with React to monitor you battery's charging and notifies users when the battery is fully charged.
 
 ## Recommended IDE Setup
 
