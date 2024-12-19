@@ -1,0 +1,52 @@
+:root {
+  --background: #121527;
+  --color: #fff;
+
+  --main: #0077ff;
+
+  --charging: #0077ff;
+  --full: #00ff00;
+  --medium: #ffd000;
+  --low: #b91818;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+
+  scroll-behavior: smooth;
+  scrollbar-color: var(--main) #fff1;
+  scrollbar-width: thin;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  max-width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--background);
+  background-image: url('../assets/wavy-lines.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+  color: var(--color);
+  user-select: none;
+  -webkit-user-select: none;
+
+  position: relative;
+}

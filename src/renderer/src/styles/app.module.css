@@ -1,0 +1,167 @@
+.title {
+  width: 100%;
+  position: fixed;
+  top: 16px;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title img {
+  width: 2.5rem;
+}
+
+.batteryLevelContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  z-index: 10;
+  animation: scaleIn 0.75s ease 0s forwards;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.batteryLevel {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.batteryCharging,
+.batteryChargingFull {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* z-index: 10; */
+}
+
+.batteryCharging i,
+.batteryChargingFull i {
+  margin-bottom: 8px;
+}
+
+.batteryCharging::before {
+  position: absolute;
+  content: '';
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid var(--charging);
+  animation: pulse 1.5s ease infinite;
+}
+
+.batteryChargingFull::before {
+  position: absolute;
+  content: '';
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid var(--full);
+  animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    /* border-width: 5px; */
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    border-width: 3px;
+    transform: scale(1.3);
+  }
+}
+
+.batteryLevel h1 {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.status {
+  font-size: 01rem;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.bolt {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 2.2rem;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  animation: popIn 0.75s ease forwards;
+}
+
+.bolt i {
+  font-size: 1.5rem;
+  color: var(--color);
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.chargingIndicator {
+  width: 100%;
+  height: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: appear 0.75s ease forwards;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(1.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.chargingIndicator i {
+  font-size: 1.5rem;
+  color: var(--color);
+}
